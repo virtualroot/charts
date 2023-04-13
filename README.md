@@ -14,6 +14,6 @@ helm repo add charts https://charts.virtualroot.dev
 helm search repo charts
 ```
 
-| Chart                                         | State |
-|-----------------------------------------------|-------|
-| [Structurizr](./charts/structurizr/README.md) | Alpha |
+| Chart                                                                                    | State |
+|------------------------------------------------------------------------------------------|-------|
+| [Structurizr](https://github.com/virtualroot/charts/tree/main/charts/structurizr#readme) | Alpha |
