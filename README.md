@@ -3,13 +3,13 @@
 ## Usage
 
 ```console
-helm repo add virtualroot https://charts.virtualroot.dev
+helm repo add charts https://charts.virtualroot.dev
 ```
 
 ## Charts
 
 ```console
-helm search repo virtualroot
+helm search repo charts
 ```
 
 | Chart                                         | State |
