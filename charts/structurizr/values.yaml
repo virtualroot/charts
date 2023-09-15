@@ -77,3 +77,67 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+
+persistentVolume:
+  ## If true, structurizr will create/use a Persistent Volume Claim
+  ## If false, use emptyDir
+  ##
+  enabled: true
+
+  ## structurizr data Persistent Volume access modes
+  ## Must match those of existing PV or dynamic provisioner
+  ## Ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+  ##
+  accessModes:
+    - ReadWriteOnce
+
+  ## structurizr data Persistent Volume labels
+  ##
+  labels: {}
+
+  ## structurizr data Persistent Volume annotations
+  ##
+  annotations: {}
+
+  ## structurizr data Persistent Volume existing claim name
+  ## Requires server.persistentVolume.enabled: true
+  ## If defined, PVC must be created manually before volume will be bound
+  existingClaim: ""
+
+
+  ## structurizr data Persistent Volume size
+  ##
+  size: 16Gi
+
+  ## structurizr data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  storageClass: "azurefile-csi"
+
+  ## structurizr data Persistent Volume Binding Mode
+  ## If defined, volumeBindingMode: <volumeBindingMode>
+  ## If undefined (the default) or set to null, no volumeBindingMode spec is
+  ##   set, choosing the default mode.
+  ##
+  # volumeBindingMode: ""
+
+
+  ## Persistent Volume Claim Selector
+  ## Useful if Persistent Volumes have been provisioned in advance
+  ## Ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
+  ##
+  # selector:
+  #  matchLabels:
+  #    release: "stable"
+  #  matchExpressions:
+  #    - { key: environment, operator: In, values: [ dev ] }
+
+  ## Persistent Volume Name
+  ## Useful if Persistent Volumes have been provisioned in advance and you want to use a specific one
+  ##
+  # volumeName: ""

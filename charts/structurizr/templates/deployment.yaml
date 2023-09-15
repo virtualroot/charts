@@ -42,6 +42,11 @@ spec:
                 #              path: /
                 #              port: http
                 #              initialDelaySeconds: 30
+{{- if .Values.persistentVolume.enabled }}          
+          volumeMounts:
+            - mountPath: "/usr/local/structurizr"
+              name: structurizr-storage
+{{- end }}              
           readinessProbe:
             httpGet:
               path: /
@@ -61,3 +66,10 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- if .Values.persistentVolume.enabled }}      
+      volumes:
+        - name: structurizr-storage
+          persistentVolumeClaim:
+            claimName:  {{ template "structurizr.fullname" . }}
+{{- end }}
+
