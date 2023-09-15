@@ -38,6 +38,18 @@ The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | tolerations | list | `[]` |  |
+| persistentVolume.enabled | bool | `true` | use persistentVolume |
+| persistentVolume.accessModes | list | `[ReadWriteOnce]` | persistentVolume access mode |
+| persistentVolume.labels | object | `{}` | add labels  |
+| persistentVolume.annotations | object | `{}` | add annotations |
+| persistentVolume.existingClaim | string | `` | to use existing claim |
+| persistentVolume.size | string | `"8Gi"` | size of persistentVolume |
+| persistentVolume.storageClass | string | `"default"` | storage class of persistentVolume |
+| persistentVolume.volumeBindingMode | string | `` |  |
+| persistentVolume.volumeName | string | `""` |  |
+
+
+
 
 ## TODO
 

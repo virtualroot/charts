@@ -108,7 +108,7 @@ persistentVolume:
 
   ## structurizr data Persistent Volume size
   ##
-  size: 16Gi
+  size: 8Gi
 
   ## structurizr data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
@@ -117,7 +117,7 @@ persistentVolume:
   ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
   ##   GKE, AWS & OpenStack)
   ##
-  storageClass: "azurefile-csi"
+  # storageClass: "-"
 
   ## structurizr data Persistent Volume Binding Mode
   ## If defined, volumeBindingMode: <volumeBindingMode>
