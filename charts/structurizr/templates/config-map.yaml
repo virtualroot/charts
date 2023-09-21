@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "structurizr.fullname" . }}-properties
+  labels:
+    {{- include "structurizr.labels" . | nindent 4 }}
+data:
+  structurizr.properties: |
+{{ .Values.properties | indent 4 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "structurizr.fullname" . }}-users
+  labels:
+    {{- include "structurizr.labels" . | nindent 4 }}
+data:
+  structurizr.users: |
+{{ .Values.users | indent 4 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "structurizr.fullname" . }}-roles
+  labels:
+    {{- include "structurizr.labels" . | nindent 4 }}
+data:
+  structurizr.roles: |
+{{ .Values.roles | indent 4 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "structurizr.fullname" . }}-saml-idp-metadata
+  labels:
+    {{- include "structurizr.labels" . | nindent 4 }}
+data:
+  saml-idp-metadata.xml: |
+{{ .Values.saml | indent 4 }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "structurizr.fullname" . }}-log4j2
+  labels:
+    {{- include "structurizr.labels" . | nindent 4 }}
+data:
+  log4j2.properties: |
+{{ .Values.log4j2 | indent 4 }}

@@ -16,11 +16,13 @@ serviceAccount:
   create: true
   # Annotations to add to the service account
   annotations: {}
+    # iam.gke.io/gcp-service-account: structurizr@*.iam.gserviceaccount.com
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
 
 podAnnotations: {}
+  # gke-gcsfuse/volumes: "true"
 
 podSecurityContext: {}
   # fsGroup: 2000
@@ -77,3 +79,49 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+volumes: []
+  # - name: my-storage
+  #   persistentVolumeClaim:
+  #     claimName: my-pvc
+  # - name: structurizr-bucket
+  #   csi:
+  #   driver: gcsfuse.csi.storage.gke.io
+  #   volumeAttributes:
+  #     bucketName: "structurizr-google-storage-bucket-name"
+  #     mountOptions: "implicit-dirs"
+
+volumeMounts: []
+  # - name: my-storage
+  #   mountPath: /path/in/container
+  # - name: structurizr-bucket
+  #   mountPath: /usr/local/structurizr
+
+properties: |
+#   # Your properties content goes here...
+#   structurizr.redis.password=${REDIS_PASSWORD}
+#   structurizr.authentication=saml
+#   structurizr.feature.ui.dslEditor=true
+#   structurizr.safeMode=false
+#   # and so on...
+
+users: |
+#   # Your users content goes here...
+#   {username}={hashed password}
+#   # and so on...
+
+roles: |
+#   # Your roles content goes here...
+#   {username}={role1},{role2},{role3}
+#   # and so on...
+
+saml: |
+#   # Your saml-idp-metadata.xml configuration goes here...
+
+log4j2: |
+#   # Your log4j2 configuration goes here...
+#   # See: https://github.com/structurizr/onpremises/blob/main/structurizr-onpremises/src/main/resources/log4j2.properties
+
+env: []
+  # - name: STRUCTURIZR_DATA_DIRECTORY
+  #   value: "/usr/local/structurizr"
