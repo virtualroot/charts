@@ -8,7 +8,7 @@ The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| affinity | object | `{}` |  |
+| affinity | object | `{}` | Affinity settings for pod assignment. |
 | autoscaling.enabled | bool | `false` |  |
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
@@ -38,7 +38,6 @@ The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | tolerations | list | `[]` | Tolerations for pod assignment. Useful for nodes with taints. |
-| affinity | object | `{}` | Affinity settings for pod assignment. |
 | volumes | list | `[]` | List of additional volumes to be added to the pods. |
 | volumeMounts | list | `[]` | Specifies where to mount the volumes in the pod. |
 | properties | string | (multi-line string) | Custom properties configuration for Structurizr. |
