@@ -1,6 +1,6 @@
 # structurizr
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: 3142](https://img.shields.io/badge/AppVersion-3142-informational?style=flat-square)
+![Version: 0.2.0](https://img.shields.io/badge/Version-0.2.0-informational?style=flat-square) ![AppVersion: 3142](https://img.shields.io/badge/AppVersion-3142-informational?style=flat-square)
 
 The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is a web-based rendering tool designed to help software development teams create software architecture diagrams and documentation.
 
