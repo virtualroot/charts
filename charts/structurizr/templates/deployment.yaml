@@ -29,6 +29,10 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
+          {{- with .Values.env }}
+          env:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -47,8 +51,46 @@ spec:
               path: /
               port: http
             initialDelaySeconds: 10
+          volumeMounts:
+          {{- with .Values.volumeMounts }}
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+            - name: properties-volume
+              mountPath: /usr/local/structurizr/structurizr.properties
+              subPath: structurizr.properties
+            - name: users-volume
+              mountPath: /usr/local/structurizr/structurizr.users
+              subPath: structurizr.users
+            - name: roles-volume
+              mountPath: /usr/local/structurizr/structurizr.roles
+              subPath: structurizr.roles
+            - name: saml-idp-metadata-volume
+              mountPath: /usr/local/structurizr/saml-idp-metadata.xml
+              subPath: saml-idp-metadata.xml
+            - name: log4j2-volume
+              mountPath: /usr/local/structurizr/log4j2.properties
+              subPath: log4j2.properties
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      {{- with .Values.volumes }}
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+        - name: properties-volume
+          configMap:
+            name: {{ include "structurizr.fullname" . }}-properties
+        - name: users-volume
+          configMap:
+            name: {{ include "structurizr.fullname" . }}-users
+        - name: roles-volume
+          configMap:
+            name: {{ include "structurizr.fullname" . }}-roles
+        - name: saml-idp-metadata-volume
+          configMap:
+            name: {{ include "structurizr.fullname" . }}-saml-idp-metadata
+        - name: log4j2-volume
+          configMap:
+            name: {{ include "structurizr.fullname" . }}-log4j2
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
