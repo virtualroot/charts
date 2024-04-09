@@ -2,6 +2,25 @@ apiVersion: v1
 entries:
   structurizr:
   - apiVersion: v2
+    appVersion: 2024.03.03
+    created: "2024-04-09T13:28:54.848888335Z"
+    description: The Structurizr Helm chart deploys Structurizr On premise flavor.
+      Structurizr is a web-based rendering tool designed to help software development
+      teams create software architecture diagrams and documentation.
+    digest: 91b792dfaf7486d114cec257f9e88ab1889cdcb51b695aa548796dbbac08029b
+    icon: https://avatars.githubusercontent.com/u/7525795?s=200&v=4
+    keywords:
+    - structurizr
+    - diagrams
+    - kubernetes
+    name: structurizr
+    sources:
+    - https://structurizr.com/help/on-premises
+    type: application
+    urls:
+    - https://github.com/virtualroot/charts/releases/download/structurizr-0.3.0/structurizr-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: "3194"
     created: "2023-10-11T08:20:51.119839786Z"
     description: The Structurizr Helm chart deploys Structurizr On premise flavor.
@@ -58,4 +77,4 @@ entries:
     urls:
     - https://github.com/virtualroot/charts/releases/download/structurizr-0.1.0/structurizr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-11T08:20:51.119850486Z"
+generated: "2024-04-09T13:28:54.848906749Z"
