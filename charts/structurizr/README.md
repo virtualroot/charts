@@ -1,6 +1,6 @@
 # structurizr
 
-![Version: 0.2.1](https://img.shields.io/badge/Version-0.2.1-informational?style=flat-square) ![AppVersion: 3194](https://img.shields.io/badge/AppVersion-3194-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![AppVersion: 2024.03.03](https://img.shields.io/badge/AppVersion-2024.03.03-informational?style=flat-square)
 
 The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is a web-based rendering tool designed to help software development teams create software architecture diagrams and documentation.
 
@@ -13,6 +13,7 @@ The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| env | list | `[]` | List of environment variables to be set for the Structurizr pod. |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"structurizr/onpremises"` |  |
@@ -25,27 +26,26 @@ The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is
 | ingress.hosts[0].paths[0].path | string | `"/"` |  |
 | ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
 | ingress.tls | list | `[]` |  |
+| log4j2 | string | `""` | Configuration settings for the logging system using Log4j2. |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
-| replicaCount | int | `1` | Specify the number of replicas |
+| properties | string | `""` | Custom properties configuration for Structurizr. |
+| replicaCount | int | `1` | Specify the number of replicas. |
 | resources | object | `{}` |  |
+| roles | string | `""` | Specifies user roles for Structurizr. |
+| saml | string | `""` | SAML identity provider metadata configuration for Structurizr authentication. |
 | securityContext | object | `{}` |  |
 | service.port | int | `8080` |  |
 | service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
-| tolerations | list | `[]` | Tolerations for pod assignment. Useful for nodes with taints. |
-| volumes | list | `[]` | List of additional volumes to be added to the pods. |
+| tolerations | list | `[]` |  |
+| users | string | `""` | Specifies user credentials for Structurizr. |
 | volumeMounts | list | `[]` | Specifies where to mount the volumes in the pod. |
-| properties | string | (multi-line string) | Custom properties configuration for Structurizr. |
-| users | string | (multi-line string) | Specifies user credentials for Structurizr. |
-| roles | string | (multi-line string) | Specifies user roles for Structurizr. |
-| saml | string | (multi-line string) | SAML identity provider metadata configuration for Structurizr authentication. |
-| log4j2 | string | (multi-line string) | Configuration settings for the logging system using Log4j2. |
-| env | list | `[]` | List of environment variables to be set for the Structurizr pod. |
+| volumes | list | `[]` | List of additional volumes to be added to the pods. |
 
 ## Additional Configuration Details:
 

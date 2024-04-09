@@ -6,12 +6,47 @@
 
 {{ template "chart.valuesSection" . }}
 
+## Additional Configuration Details:
+
+### `volumes` and `volumeMounts`:
+You can define additional volumes to attach to the pod and specify where they are mounted. For example:
+
+```yaml
+volumes:
+  - name: my-storage
+    persistentVolumeClaim:
+      claimName: my-pvc
+volumeMounts:
+  - name: my-storage
+    mountPath: /path/in/container
+```
+
+### `properties`, `users`, `roles`, and `saml-idp-metadata`:
+These fields allow you to define multi-line strings for configurations. For instance, `properties` can be used to set Structurizr-specific configurations:
+
+```yaml
+properties: |
+  structurizr.redis.password=${REDIS_PASSWORD}
+  structurizr.authentication=saml
+```
+Similar patterns can be used for `users`, `roles`, and `saml-idp-metadata` fields.
+
+### `env`:
+You can specify additional environment variables for the Structurizr application. For instance:
+
+```yaml
+env:
+  - name: STRUCTURIZR_DATA_DIRECTORY
+    value: "/usr/local/structurizr"
+```
+This can be useful to configure aspects of Structurizr using environment variables.
+
 ## TODO
 
 - [ ] Encryption
 - [ ] Authentication
   - [ ] File
   - [ ] LDAP
-  - [ ] SAML
+  - [x] SAML
 - [ ] Redis sessions
 - [ ] Bucket data
