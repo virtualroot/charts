@@ -1,4 +1,4 @@
-# -- Specify the number of replicas
+# -- Specify the number of replicas.
 replicaCount: 1
 
 image:
@@ -78,8 +78,10 @@ nodeSelector: {}
 
 tolerations: []
 
+# -- Affinity settings for pod assignment.
 affinity: {}
 
+# -- List of additional volumes to be added to the pods.
 volumes: []
   # - name: my-storage
   #   persistentVolumeClaim:
@@ -91,12 +93,14 @@ volumes: []
   #     bucketName: "structurizr-google-storage-bucket-name"
   #     mountOptions: "implicit-dirs"
 
+# -- Specifies where to mount the volumes in the pod.
 volumeMounts: []
   # - name: my-storage
   #   mountPath: /path/in/container
   # - name: structurizr-bucket
   #   mountPath: /usr/local/structurizr
 
+# -- Custom properties configuration for Structurizr.
 properties: |
 #   # Your properties content goes here...
 #   structurizr.redis.password=${REDIS_PASSWORD}
@@ -105,23 +109,28 @@ properties: |
 #   structurizr.safeMode=false
 #   # and so on...
 
+# -- Specifies user credentials for Structurizr.
 users: |
 #   # Your users content goes here...
 #   {username}={hashed password}
 #   # and so on...
 
+# -- Specifies user roles for Structurizr.
 roles: |
 #   # Your roles content goes here...
 #   {username}={role1},{role2},{role3}
 #   # and so on...
 
+# -- SAML identity provider metadata configuration for Structurizr authentication.
 saml: |
 #   # Your saml-idp-metadata.xml configuration goes here...
 
+# -- Configuration settings for the logging system using Log4j2.
 log4j2: |
 #   # Your log4j2 configuration goes here...
 #   # See: https://github.com/structurizr/onpremises/blob/main/structurizr-onpremises/src/main/resources/log4j2.properties
 
+# -- List of environment variables to be set for the Structurizr pod.
 env: []
   # - name: STRUCTURIZR_DATA_DIRECTORY
   #   value: "/usr/local/structurizr"

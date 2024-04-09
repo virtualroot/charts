@@ -11,5 +11,5 @@ keywords:
 sources:
   - https://structurizr.com/help/on-premises
 
-version: 0.2.1
-appVersion: "3194"
+version: 0.3.0
+appVersion: "2024.03.03"
