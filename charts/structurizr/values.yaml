@@ -100,7 +100,7 @@ volumeMounts: []
   # - name: structurizr-bucket
   #   mountPath: /usr/local/structurizr
 
-PersistentVolumeClaim:
+persistence:
   enabled: false
   name: ""
   # -- Specifies the size of the PersistentVolume.
