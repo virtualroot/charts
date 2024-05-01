@@ -1,6 +1,6 @@
 # structurizr
 
-![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![AppVersion: 2024.03.03](https://img.shields.io/badge/AppVersion-2024.03.03-informational?style=flat-square)
+![Version: 0.4.1](https://img.shields.io/badge/Version-0.4.1-informational?style=flat-square) ![AppVersion: 2024.03.03](https://img.shields.io/badge/AppVersion-2024.03.03-informational?style=flat-square)
 
 The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is a web-based rendering tool designed to help software development teams create software architecture diagrams and documentation.
 
@@ -29,6 +29,11 @@ The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is
 | log4j2 | string | `""` | Configuration settings for the logging system using Log4j2. |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
+| persistence.accessModes | list | `["ReadWriteOnce"]` | Specifies the access mode of the PersistentVolume. |
+| persistence.enabled | bool | `false` |  |
+| persistence.name | string | `""` |  |
+| persistence.size | string | `"1Gi"` | Specifies the size of the PersistentVolume. |
+| persistence.storageClass | string | `""` | Specifies the storage class of the PersistentVolume. |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | properties | string | `""` | Custom properties configuration for Structurizr. |
