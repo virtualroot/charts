@@ -18,6 +18,25 @@ entries:
     urls:
     - https://github.com/virtualroot/charts/releases/download/RiverUI-0.1.0/RiverUI-0.1.0.tgz
     version: 0.1.0
+  riverui:
+  - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2024-07-11T21:07:54.070975865Z"
+    description: A web interface for River. Fast and reliable background jobs in Go.
+    digest: 1d3ea776c8ed8f758398681d228bb7b95402388de748686fe426adbafcdb1fdb
+    icon: https://avatars.githubusercontent.com/u/136755925?s=200&v=4
+    keywords:
+    - river
+    - queue
+    - riverui
+    name: riverui
+    sources:
+    - https://riverqueue.com/
+    - https://github.com/riverqueue/riverui
+    type: application
+    urls:
+    - https://github.com/virtualroot/charts/releases/download/riverui-0.1.1/riverui-0.1.1.tgz
+    version: 0.1.1
   structurizr:
   - apiVersion: v2
     appVersion: 2024.06.25
@@ -152,4 +171,4 @@ entries:
     urls:
     - https://github.com/virtualroot/charts/releases/download/structurizr-0.1.0/structurizr-0.1.0.tgz
     version: 0.1.0
-generated: "2024-07-11T20:58:02.668500759Z"
+generated: "2024-07-11T21:07:54.071015989Z"
