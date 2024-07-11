@@ -5,15 +5,16 @@
 ## Usage
 
 ```console
-helm repo add charts https://charts.virtualroot.dev
+helm repo add virtualroot https://charts.virtualroot.dev
 ```
 
 ## Charts
 
 ```console
-helm search repo charts
+helm search repo virtualroot
 ```
 
 | Chart                                                                                    | State |
 |------------------------------------------------------------------------------------------|-------|
-| [Structurizr](https://github.com/virtualroot/charts/tree/main/charts/structurizr#readme) | Alpha |
+| [RiverUI](https://github.com/virtualroot/charts/tree/main/charts/riverui#readme)         | Alpha |
+| [Structurizr](https://github.com/virtualroot/charts/tree/main/charts/structurizr#readme) | Beta  |
