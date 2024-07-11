@@ -1,0 +1,16 @@
+{{ template "chart.header" . }}
+
+{{ template "chart.versionBadge" . }}{{ template "chart.appVersionBadge" . }}
+
+{{ template "chart.description" . }}
+
+{{ template "chart.sourcesList" . }}
+
+A working River database is required for the UI to start up properly.
+Configure your `DATABASE_URL` in `databaseURL`.
+
+```yaml
+databaseURL: "postgresql://username:password@localhost:5432/river?application_name=riverui"
+```
+
+{{ template "chart.valuesSection" . }}
