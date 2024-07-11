@@ -1,0 +1,15 @@
+apiVersion: v2
+name: RiverUI
+description: A web interface for River. Fast and reliable background jobs in Go.
+
+type: application
+keywords:
+  - river
+  - queue
+  - riverui
+sources:
+  - https://riverqueue.com/
+  - https://github.com/riverqueue/riverui
+
+version: 0.1.0
+appVersion: "0.2.0"
