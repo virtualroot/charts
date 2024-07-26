@@ -12,5 +12,5 @@ sources:
   - https://riverqueue.com/
   - https://github.com/riverqueue/riverui
 
-version: 0.1.1
-appVersion: "0.2.0"
+version: 0.1.2
+appVersion: "0.3.0"
