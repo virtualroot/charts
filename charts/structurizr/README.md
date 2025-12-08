@@ -26,6 +26,7 @@ The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is
 | ingress.hosts[0].paths[0].path | string | `"/"` |  |
 | ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
 | ingress.tls | list | `[]` |  |
+| labels | object | `{}` | Additional labels to set on Deployment and Pod |
 | log4j2 | string | `""` | Configuration settings for the logging system using Log4j2. |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |

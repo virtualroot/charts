@@ -145,3 +145,8 @@ log4j2: |
 env: []
   # - name: STRUCTURIZR_DATA_DIRECTORY
   #   value: "/usr/local/structurizr"
+
+# -- Additional labels
+labels:
+#  team: ops
+#  environment: production
