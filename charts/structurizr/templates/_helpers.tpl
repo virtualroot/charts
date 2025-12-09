@@ -40,6 +40,9 @@ helm.sh/chart: {{ include "structurizr.chart" . }}
 app.kubernetes.io/version: {{ .Values.image.tag | default .Chart.AppVersion | quote }}
 {{- end }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- with .Values.labels }}
+{{ toYaml . }}
+{{- end }}
 {{- end }}
 
 {{/*
