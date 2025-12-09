@@ -1,6 +1,6 @@
 # structurizr
 
-![Version: 0.4.2](https://img.shields.io/badge/Version-0.4.2-informational?style=flat-square) ![AppVersion: 2024.06.25](https://img.shields.io/badge/AppVersion-2024.06.25-informational?style=flat-square)
+![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![AppVersion: 2025.11.09](https://img.shields.io/badge/AppVersion-2025.11.09-informational?style=flat-square)
 
 The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is a web-based rendering tool designed to help software development teams create software architecture diagrams and documentation.
 
@@ -26,7 +26,7 @@ The Structurizr Helm chart deploys Structurizr On premise flavor. Structurizr is
 | ingress.hosts[0].paths[0].path | string | `"/"` |  |
 | ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
 | ingress.tls | list | `[]` |  |
-| labels | object | `{}` | Additional labels to set on Deployment and Pod |
+| labels | string | `nil` | Additional labels |
 | log4j2 | string | `""` | Configuration settings for the logging system using Log4j2. |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
